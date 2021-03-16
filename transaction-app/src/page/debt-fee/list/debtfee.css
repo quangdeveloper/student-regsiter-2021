@@ -1,0 +1,25 @@
+/*set up font size in table */
+.table.table-head-custom thead tr, .table.table-head-custom thead th {
+    font-size: .8rem;
+}
+
+@media (min-width: 992px) {
+    .aside-enabled.subheader-fixed .subheader {
+        /*left: 290px;*/
+        right: 25px;
+    }
+}
+
+.subheader-enabled:not(.subheader-fixed) .subheader.subheader-solid {
+    margin-bottom: 0;
+    box-shadow: white;
+}
+
+.subheader-sticky, #kt_subheader {
+    height: 90px;
+    position: absolute;
+}
+
+#kt_content .card-body {
+    box-shadow: white;
+}
