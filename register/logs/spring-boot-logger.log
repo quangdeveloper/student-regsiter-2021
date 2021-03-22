@@ -1,0 +1,444 @@
+2021-03-22 09:26:19,927 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-03-22 09:26:19,940 INFO org.springframework.boot.StartupInfoLogger [main] Starting RegisterApplication using Java 1.8.0_281 on quangnv3 with PID 16844 (C:\Project\Student_register\register\target\classes started by quangnv3 in C:\Project\Student_register\register)
+2021-03-22 09:26:19,941 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-22 09:26:20,880 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-22 09:26:20,965 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 75 ms. Found 3 JPA repository interfaces.
+2021-03-22 09:26:21,231 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fb6097b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 09:26:21,237 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 09:26:21,483 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-03-22 09:26:21,490 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-03-22 09:26:21,491 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-03-22 09:26:21,492 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-22 09:26:21,494 INFO org.apache.juli.logging.DirectJDKLog [main] Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2021-03-22 09:26:21,494 INFO org.apache.juli.logging.DirectJDKLog [main] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 09:26:21,494 INFO org.apache.juli.logging.DirectJDKLog [main] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 09:26:21,498 INFO org.apache.juli.logging.DirectJDKLog [main] OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2021-03-22 09:26:21,785 WARN org.apache.juli.logging.DirectJDKLog [main] Failed to scan [file:/C:/Users/quangnv3/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar] from classloader hierarchy
+java.io.FileNotFoundException: C:\Users\quangnv3\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\oraclepki.jar (The system cannot find the file specified)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	at java.util.jar.JarFile.<init>(JarFile.java:167)
+	at java.util.jar.JarFile.<init>(JarFile.java:131)
+	at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:241)
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65)
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49)
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383)
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318)
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:270)
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233)
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262)
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104)
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:576)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at vn.vnpay.register.RegisterApplication.main(RegisterApplication.java:11)
+2021-03-22 09:26:21,788 INFO org.apache.juli.logging.DirectJDKLog [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-03-22 09:26:21,791 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-03-22 09:26:21,791 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1800 ms
+2021-03-22 09:26:21,840 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-22 09:26:21,974 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-22 09:26:22,034 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-22 09:26:22,216 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-22 09:26:22,325 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Starting...
+2021-03-22 09:26:23,273 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Start completed.
+2021-03-22 09:26:23,286 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2021-03-22 09:26:24,057 INFO org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl [main] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@34cf0e80] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-03-22 09:26:24,732 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-22 09:26:24,739 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-22 09:26:25,714 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/v2/api-docs'] with []
+2021-03-22 09:26:25,714 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/configuration/ui'] with []
+2021-03-22 09:26:25,714 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-resources/**'] with []
+2021-03-22 09:26:25,715 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='configuration/security'] with []
+2021-03-22 09:26:25,715 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-ui.html'] with []
+2021-03-22 09:26:25,715 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='webjar/**'] with []
+2021-03-22 09:26:25,759 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-22 09:26:25,865 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5059d398, org.springframework.security.web.context.SecurityContextPersistenceFilter@59b853aa, org.springframework.security.web.header.HeaderWriterFilter@42cd0fc6, org.springframework.web.filter.CorsFilter@5b1420f9, org.springframework.security.web.authentication.logout.LogoutFilter@34f60be9, vn.vnpay.register.jwt.JWTAuthenticationFilter@54687fd0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@771d4db, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a0c512b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@434ee422, org.springframework.security.web.session.SessionManagementFilter@35af1558, org.springframework.security.web.access.ExceptionTranslationFilter@2059f785, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@77b22b05]
+2021-03-22 09:26:25,936 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-22 09:26:26,102 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-03-22 09:26:26,121 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path '/student'
+2021-03-22 09:26:26,122 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-03-22 09:26:26,136 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-03-22 09:26:26,157 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-03-22 09:26:26,267 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getListUserUsingPOST_1
+2021-03-22 09:26:26,274 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getListUserUsingPOST_2
+2021-03-22 09:26:26,292 INFO org.springframework.boot.StartupInfoLogger [main] Started RegisterApplication in 6.867 seconds (JVM running for 8.18)
+2021-03-22 09:26:45,342 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-22 09:26:45,342 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-03-22 09:26:45,343 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 1 ms
+2021-03-22 10:19:28,919 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-03-22 10:19:28,922 INFO org.springframework.boot.StartupInfoLogger [main] Starting RegisterApplication using Java 1.8.0_281 on quangnv3 with PID 24636 (C:\Project\Student_register\register\target\classes started by quangnv3 in C:\Project\Student_register\register)
+2021-03-22 10:19:28,929 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-22 10:19:30,109 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-22 10:19:30,167 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2021-03-22 10:19:30,453 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@84487f4' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 10:19:30,461 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 10:19:30,743 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-03-22 10:19:30,755 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-03-22 10:19:30,756 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-03-22 10:19:30,757 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-22 10:19:30,762 INFO org.apache.juli.logging.DirectJDKLog [main] Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2021-03-22 10:19:30,763 INFO org.apache.juli.logging.DirectJDKLog [main] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 10:19:30,764 INFO org.apache.juli.logging.DirectJDKLog [main] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 10:19:30,771 INFO org.apache.juli.logging.DirectJDKLog [main] OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2021-03-22 10:19:31,162 WARN org.apache.juli.logging.DirectJDKLog [main] Failed to scan [file:/C:/Users/quangnv3/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar] from classloader hierarchy
+java.io.FileNotFoundException: C:\Users\quangnv3\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\oraclepki.jar (The system cannot find the file specified)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	at java.util.jar.JarFile.<init>(JarFile.java:167)
+	at java.util.jar.JarFile.<init>(JarFile.java:131)
+	at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:241)
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65)
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49)
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383)
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318)
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:270)
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233)
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262)
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104)
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:576)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at vn.vnpay.register.RegisterApplication.main(RegisterApplication.java:11)
+2021-03-22 10:19:31,164 INFO org.apache.juli.logging.DirectJDKLog [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-03-22 10:19:31,167 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-03-22 10:19:31,167 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 2164 ms
+2021-03-22 10:19:31,233 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-22 10:19:31,384 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-22 10:19:31,434 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-22 10:19:31,561 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-22 10:19:31,649 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Starting...
+2021-03-22 10:19:32,329 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Start completed.
+2021-03-22 10:19:32,341 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2021-03-22 10:19:33,099 INFO org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl [main] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@60f9dc7e] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-03-22 10:19:33,607 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-22 10:19:33,616 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-22 10:19:34,459 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/v2/api-docs'] with []
+2021-03-22 10:19:34,459 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/configuration/ui'] with []
+2021-03-22 10:19:34,459 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-resources/**'] with []
+2021-03-22 10:19:34,459 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='configuration/security'] with []
+2021-03-22 10:19:34,460 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-ui.html'] with []
+2021-03-22 10:19:34,460 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='webjar/**'] with []
+2021-03-22 10:19:34,505 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-22 10:19:34,603 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4cded2cd, org.springframework.security.web.context.SecurityContextPersistenceFilter@20155dae, org.springframework.security.web.header.HeaderWriterFilter@1397b141, org.springframework.web.filter.CorsFilter@12e40e98, org.springframework.security.web.authentication.logout.LogoutFilter@3d05435c, vn.vnpay.register.jwt.JWTAuthenticationFilter@352c3d70, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@417bfebd, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33399052, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a9c92b5, org.springframework.security.web.session.SessionManagementFilter@7e2a76be, org.springframework.security.web.access.ExceptionTranslationFilter@1123d461, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3c5e4aac]
+2021-03-22 10:19:34,670 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-22 10:19:34,814 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-03-22 10:19:34,834 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path '/student'
+2021-03-22 10:19:34,835 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-03-22 10:19:34,848 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-03-22 10:19:34,868 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-03-22 10:19:34,981 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getListUserUsingPOST_1
+2021-03-22 10:19:35,003 INFO org.springframework.boot.StartupInfoLogger [main] Started RegisterApplication in 6.578 seconds (JVM running for 8.068)
+2021-03-22 10:25:03,365 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-22 10:25:03,366 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-03-22 10:25:03,370 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 4 ms
+2021-03-22 10:55:39,421 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-5] call api /find_by_filter 
+2021-03-22 10:58:20,861 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-7] call api /find_by_filter 
+2021-03-22 10:58:41,784 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-03-22 10:58:41,804 INFO org.springframework.boot.StartupInfoLogger [main] Starting RegisterApplication using Java 1.8.0_281 on quangnv3 with PID 26424 (C:\Project\Student_register\register\target\classes started by quangnv3 in C:\Project\Student_register\register)
+2021-03-22 10:58:41,805 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-22 10:58:42,817 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-22 10:58:42,910 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2021-03-22 10:58:43,212 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@76e90da5' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 10:58:43,220 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 10:58:43,462 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-03-22 10:58:43,472 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-03-22 10:58:43,473 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-03-22 10:58:43,473 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-22 10:58:43,476 INFO org.apache.juli.logging.DirectJDKLog [main] Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2021-03-22 10:58:43,476 INFO org.apache.juli.logging.DirectJDKLog [main] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 10:58:43,476 INFO org.apache.juli.logging.DirectJDKLog [main] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 10:58:43,480 INFO org.apache.juli.logging.DirectJDKLog [main] OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2021-03-22 10:58:43,753 WARN org.apache.juli.logging.DirectJDKLog [main] Failed to scan [file:/C:/Users/quangnv3/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar] from classloader hierarchy
+java.io.FileNotFoundException: C:\Users\quangnv3\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\oraclepki.jar (The system cannot find the file specified)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	at java.util.jar.JarFile.<init>(JarFile.java:167)
+	at java.util.jar.JarFile.<init>(JarFile.java:131)
+	at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:241)
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65)
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49)
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383)
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318)
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:270)
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233)
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262)
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104)
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:576)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at vn.vnpay.register.RegisterApplication.main(RegisterApplication.java:11)
+2021-03-22 10:58:43,756 INFO org.apache.juli.logging.DirectJDKLog [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-03-22 10:58:43,759 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-03-22 10:58:43,761 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1906 ms
+2021-03-22 10:58:43,828 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-22 10:58:43,950 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-22 10:58:44,030 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-22 10:58:44,198 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-22 10:58:44,313 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Starting...
+2021-03-22 10:58:45,070 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Start completed.
+2021-03-22 10:58:45,084 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2021-03-22 10:58:46,035 INFO org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl [main] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@58932d08] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-03-22 10:58:46,570 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-22 10:58:46,580 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-22 10:58:47,804 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/v2/api-docs'] with []
+2021-03-22 10:58:47,805 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/configuration/ui'] with []
+2021-03-22 10:58:47,805 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-resources/**'] with []
+2021-03-22 10:58:47,806 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='configuration/security'] with []
+2021-03-22 10:58:47,806 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-ui.html'] with []
+2021-03-22 10:58:47,806 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='webjar/**'] with []
+2021-03-22 10:58:47,863 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-22 10:58:47,988 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@773cc551, org.springframework.security.web.context.SecurityContextPersistenceFilter@70fe33fa, org.springframework.security.web.header.HeaderWriterFilter@74130456, org.springframework.web.filter.CorsFilter@5cbaafbd, org.springframework.security.web.authentication.logout.LogoutFilter@3203a4ae, vn.vnpay.register.jwt.JWTAuthenticationFilter@2c0d7099, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@796a7c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@d4dbb34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f0f56f5, org.springframework.security.web.session.SessionManagementFilter@7d28efd5, org.springframework.security.web.access.ExceptionTranslationFilter@7dbe858f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@11e75942]
+2021-03-22 10:58:48,101 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-22 10:58:48,320 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-03-22 10:58:48,354 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path '/student'
+2021-03-22 10:58:48,356 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-03-22 10:58:48,378 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-03-22 10:58:48,413 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-03-22 10:58:48,577 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getListUserUsingPOST_1
+2021-03-22 10:58:48,615 INFO org.springframework.boot.StartupInfoLogger [main] Started RegisterApplication in 7.234 seconds (JVM running for 9.253)
+2021-03-22 10:59:46,573 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-22 10:59:46,574 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-03-22 10:59:46,577 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 3 ms
+2021-03-22 10:59:46,714 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-1] call api /find_by_filter 
+2021-03-22 11:00:14,463 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-2] call api /find_by_filter 
+2021-03-22 11:01:35,238 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [hikari-pool housekeeper] hikari-pool - Thread starvation or clock leap detected (housekeeper delta=1m50s34ms572µs500ns).
+2021-03-22 11:01:35,245 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-4] call api /find_by_filter 
+2021-03-22 11:01:35,245 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-3] call api /find_by_filter 
+2021-03-22 11:03:38,140 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-9] call api /find_by_filter 
+2021-03-22 11:07:00,272 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-8] call api /find_by_filter 
+2021-03-22 11:07:05,586 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-10] call api /find_by_filter 
+2021-03-22 11:07:12,666 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-2] call api /find_by_filter 
+2021-03-22 11:07:15,419 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-3] call api /find_by_filter 
+2021-03-22 11:17:35,437 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-5] call api /find_by_filter 
+2021-03-22 11:17:40,384 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-7] call api /find_by_filter 
+2021-03-22 11:18:34,618 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-6] call api /find_by_filter 
+2021-03-22 11:20:21,277 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-1] call api /find_by_filter 
+2021-03-22 11:20:58,851 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-2] call api /find_by_filter 
+2021-03-22 11:24:42,215 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-4] call api /find_by_filter 
+2021-03-22 11:25:06,935 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2021-03-22 11:25:06,948 INFO org.springframework.boot.StartupInfoLogger [main] Starting RegisterApplication using Java 1.8.0_281 on quangnv3 with PID 3868 (C:\Project\Student_register\register\target\classes started by quangnv3 in C:\Project\Student_register\register)
+2021-03-22 11:25:06,949 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-03-22 11:25:09,391 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-22 11:25:09,534 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 132 ms. Found 3 JPA repository interfaces.
+2021-03-22 11:25:10,104 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@72456279' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 11:25:10,118 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-03-22 11:25:10,399 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8888 (http)
+2021-03-22 11:25:10,406 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8888"]
+2021-03-22 11:25:10,406 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-03-22 11:25:10,407 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-22 11:25:10,409 INFO org.apache.juli.logging.DirectJDKLog [main] Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2021-03-22 11:25:10,409 INFO org.apache.juli.logging.DirectJDKLog [main] APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2021-03-22 11:25:10,409 INFO org.apache.juli.logging.DirectJDKLog [main] APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2021-03-22 11:25:10,413 INFO org.apache.juli.logging.DirectJDKLog [main] OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2021-03-22 11:25:10,682 WARN org.apache.juli.logging.DirectJDKLog [main] Failed to scan [file:/C:/Users/quangnv3/.m2/repository/com/oracle/database/jdbc/ojdbc8/19.8.0.0/oraclepki.jar] from classloader hierarchy
+java.io.FileNotFoundException: C:\Users\quangnv3\.m2\repository\com\oracle\database\jdbc\ojdbc8\19.8.0.0\oraclepki.jar (The system cannot find the file specified)
+	at java.util.zip.ZipFile.open(Native Method)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:225)
+	at java.util.zip.ZipFile.<init>(ZipFile.java:155)
+	at java.util.jar.JarFile.<init>(JarFile.java:167)
+	at java.util.jar.JarFile.<init>(JarFile.java:131)
+	at org.apache.tomcat.util.compat.JreCompat.jarFileNewInstance(JreCompat.java:241)
+	at org.apache.tomcat.util.scan.JarFileUrlJar.<init>(JarFileUrlJar.java:65)
+	at org.apache.tomcat.util.scan.JarFactory.newInstance(JarFactory.java:49)
+	at org.apache.tomcat.util.scan.StandardJarScanner.process(StandardJarScanner.java:383)
+	at org.apache.tomcat.util.scan.StandardJarScanner.processURLs(StandardJarScanner.java:318)
+	at org.apache.tomcat.util.scan.StandardJarScanner.doScanClassPath(StandardJarScanner.java:270)
+	at org.apache.tomcat.util.scan.StandardJarScanner.scan(StandardJarScanner.java:233)
+	at org.apache.jasper.servlet.TldScanner.scanJars(TldScanner.java:262)
+	at org.apache.jasper.servlet.TldScanner.scan(TldScanner.java:104)
+	at org.apache.jasper.servlet.JasperInitializer.onStartup(JasperInitializer.java:83)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5166)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:843)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:434)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:930)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:450)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:199)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:181)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:159)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:576)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:767)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:759)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:426)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:326)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1300)
+	at vn.vnpay.register.RegisterApplication.main(RegisterApplication.java:11)
+2021-03-22 11:25:10,685 INFO org.apache.juli.logging.DirectJDKLog [main] At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2021-03-22 11:25:10,688 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-03-22 11:25:10,688 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 3604 ms
+2021-03-22 11:25:10,795 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-22 11:25:11,029 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-22 11:25:11,102 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.28.Final
+2021-03-22 11:25:11,254 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-22 11:25:11,363 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Starting...
+2021-03-22 11:25:12,659 INFO com.zaxxer.hikari.HikariDataSource [main] hikari-pool - Start completed.
+2021-03-22 11:25:12,687 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.Oracle12cDialect
+2021-03-22 11:25:13,861 INFO org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl [main] HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1179fc8c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2021-03-22 11:25:14,509 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-22 11:25:14,519 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-22 11:25:15,895 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/v2/api-docs'] with []
+2021-03-22 11:25:15,896 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='/configuration/ui'] with []
+2021-03-22 11:25:15,896 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-resources/**'] with []
+2021-03-22 11:25:15,896 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='configuration/security'] with []
+2021-03-22 11:25:15,897 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='swagger-ui.html'] with []
+2021-03-22 11:25:15,897 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure Ant [pattern='webjar/**'] with []
+2021-03-22 11:25:15,962 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-22 11:25:16,299 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d6d424d, org.springframework.security.web.context.SecurityContextPersistenceFilter@57f1a1de, org.springframework.security.web.header.HeaderWriterFilter@9763e61, org.springframework.web.filter.CorsFilter@391b01c5, org.springframework.security.web.authentication.logout.LogoutFilter@d08f85a, vn.vnpay.register.jwt.JWTAuthenticationFilter@4e10a320, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@98712fa, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72b1df49, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6e78177b, org.springframework.security.web.session.SessionManagementFilter@dd9de63, org.springframework.security.web.access.ExceptionTranslationFilter@6c49ea0c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@58a7a58d]
+2021-03-22 11:25:16,430 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-22 11:25:16,643 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8888"]
+2021-03-22 11:25:16,668 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8888 (http) with context path '/student'
+2021-03-22 11:25:16,669 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-03-22 11:25:16,689 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-03-22 11:25:16,720 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-03-22 11:25:16,886 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: getListUserUsingPOST_1
+2021-03-22 11:25:16,933 INFO org.springframework.boot.StartupInfoLogger [main] Started RegisterApplication in 10.981 seconds (JVM running for 12.529)
+2021-03-22 11:25:22,384 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8888-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-22 11:25:22,384 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-03-22 11:25:22,385 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8888-exec-1] Completed initialization in 1 ms
+2021-03-22 11:25:22,474 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-1] call api /find_by_filter 
+2021-03-22 11:25:27,462 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-2] call api /find_by_filter 
+2021-03-22 11:25:36,985 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-4] call api /find_by_filter 
+2021-03-22 11:44:58,867 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-6] call api /find_by_filter 
+2021-03-22 11:46:45,763 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-8] call api /find_by_filter 
+2021-03-22 11:46:51,740 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-10] call api /find_by_filter 
+2021-03-22 11:50:32,251 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-2] call api /find_by_filter 
+2021-03-22 11:51:50,677 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-4] call api /find_by_filter 
+2021-03-22 11:51:53,235 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-5] call api /find_by_filter 
+2021-03-22 11:52:04,019 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-7] call api /find_by_filter 
+2021-03-22 11:52:30,289 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-8] call api /find_by_filter 
+2021-03-22 11:55:02,000 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-10] call api /find_by_filter 
+2021-03-22 11:55:24,777 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-2] call api /find_by_filter 
+2021-03-22 11:55:30,926 INFO vn.vnpay.register.controller.UserController [http-nio-8888-exec-4] call api /find_by_filter 
+2021-03-22 12:41:54,044 WARN com.zaxxer.hikari.pool.HikariPool$HouseKeeper [hikari-pool housekeeper] hikari-pool - Thread starvation or clock leap detected (housekeeper delta=41m10s730ms585µs700ns).

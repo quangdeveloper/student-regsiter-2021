@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-export default function DebtFeeInfo(props) {
+export default function UserInfo(props) {
 
     const [isClose, setIsClose] = useState(props.isClose);
 

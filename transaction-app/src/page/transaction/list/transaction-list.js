@@ -48,14 +48,14 @@ export default function TransactionList(props) {
             <div className="d-flex flex-column flex-root">
                 <div className="d-flex flex-row flex-column-fluid page">
                     <div className="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
-                        <div className="subheader subheader-sticky py-2 py-lg-2 subheader-solid" id="kt_subheader">
-                            <div
-                                className="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-                                <div className="d-flex align-items-center flex-wrap mr-2">
-                                    <h5 className="title-main  mt-2 mb-2 mr-5">Tổng hợp danh sách giao dịch</h5>
-                                </div>
-                            </div>
-                        </div>
+                        {/*<div className="subheader subheader-sticky py-2 py-lg-2 subheader-solid" id="kt_subheader">*/}
+                        {/*    <div*/}
+                        {/*        className="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">*/}
+                        {/*        <div className="d-flex align-items-center flex-wrap mr-2">*/}
+                        {/*            <h5 className="title-main  mt-2 mb-2 mr-5">Tổng hợp danh sách giao dịch</h5>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <div className="content d-flex flex-column flex-column-fluid" id="kt_content">
                             <div className="d-flex flex-column-fluid">
                                 <div className="container">

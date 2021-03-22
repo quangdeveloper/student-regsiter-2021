@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import vn.vnpay.register.dto.ResponseDTO;
 import vn.vnpay.register.dto.request.LoginRequest;
+import vn.vnpay.register.dto.request.UserFilterRequest;
 import vn.vnpay.register.service.UserService;
 import vn.vnpay.register.util.Constant;
 
@@ -25,13 +26,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/find_by_username")
-    public ResponseEntity<ResponseDTO> getListUser(@RequestBody LoginRequest loginRequest) {
+    @PostMapping("/find_by_filter")
+    public ResponseEntity<ResponseDTO> findByFilter(@RequestBody UserFilterRequest request) {
 
-        logger.info("call api /find_by_username ");
+        logger.info("call api /find_by_filter ");
         return ResponseEntity.ok().body(
                 ResponseDTO.builder()
-                        .map(userService.findAllUser())
+                        .map(userService.findByFilter(request))
                         .code(Constant.RESPONSE.CODE.OK)
                         .message(Constant.RESPONSE.MESSAGE.OK)
                         .build()
