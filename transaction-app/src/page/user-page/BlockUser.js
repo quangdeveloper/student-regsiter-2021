@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Block() {
+const BlockUser = () => {
     return (
         <div>
             <div className="modal-dialog" role="document" style={{width: 400}}>
@@ -53,3 +53,4 @@ export default function Block() {
         </div>
     )
 }
+export default BlockUser;

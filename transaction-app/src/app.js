@@ -1,34 +1,26 @@
-import React, {Component} from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom';
-import Header from "./containner/header";
-import Aside from "./containner/aside";
+import React from 'react';
+import { Switch, BrowserRouter} from 'react-router-dom';
+
 import ToastNotify from "./shared/toast/toast.js";
-
-const loading = (
-    <div className="pt-3 text-center">
-        <div className="sk-spinner sk-spinner-pulse"></div>
-    </div>
-)
-
-const Login = React.lazy(() => import('./page/login/login'));
-const TransactionList = React.lazy(() => import('./page/transaction/list/transaction-list'));
-const DebtFeeList = React.lazy(() => import('./page/user-page/list'));
+import { GuardProvider, GuardedRoute } from 'react-router-guards';
+import NotFound from "./containner/NotFound";
+import AuthGuard from "./containner/AuthGuard";
+import Layout from "./page/Layout";
+import Login from "./page/login/login";
 
 export default function App() {
     return (
         <div>
-            <Header/>
-            <Aside/>
-            <HashRouter>
-                <React.Suspense fallback={loading}>
+            <BrowserRouter>
+                <GuardProvider guards={[AuthGuard]} error={NotFound}>
                     <Switch>
-                        <Route exact path="/login" name="Login" component={Login}/>
-                        <Route exact path="/debt-fee" name="DebtFee" component={DebtFeeList}/>
-                        <Route path="/transaction" name="Transaction" component={TransactionList}/>
+                        <GuardedRoute path="/login" exact meta={{ auth: false }} component={Login} />
+                        <GuardedRoute path="/error" exact meta={{ auth: false }} component={NotFound} />
+                        <GuardedRoute path="/" meta={{ auth: true }} render={props => <Layout {...props} />} />
                     </Switch>
-                </React.Suspense>
-            </HashRouter>
-            <ToastNotify/>
+                </GuardProvider>
+                <ToastNotify/>
+            </BrowserRouter>
         </div>
     );
 }

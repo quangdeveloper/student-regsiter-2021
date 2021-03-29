@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import vn.vnpay.register.dto.ResponseDTO;
 import vn.vnpay.register.dto.request.LoginRequest;
 import vn.vnpay.register.dto.request.UserFilterRequest;
+import vn.vnpay.register.dto.request.UserNewRequest;
+import vn.vnpay.register.dto.request.UserUpdateRequest;
 import vn.vnpay.register.service.UserService;
 import vn.vnpay.register.util.Constant;
 
@@ -38,5 +40,61 @@ public class UserController {
                         .build()
         );
     }
+
+    @PostMapping("/create")
+    public ResponseEntity<ResponseDTO> createUser(@RequestBody UserNewRequest userNewRequest) {
+
+        logger.info("call api /create ");
+        return ResponseEntity.ok().body(
+                ResponseDTO.builder()
+                        .map(null)
+                        .code(Constant.RESPONSE.CODE.OK)
+                        .message(Constant.RESPONSE.MESSAGE.OK)
+                        .build()
+        );
+    }
+
+
+    @PostMapping("/update")
+    public ResponseEntity<ResponseDTO> updateUser(@RequestBody UserUpdateRequest user) {
+
+        logger.info("call api /create ");
+        return ResponseEntity.ok().body(
+                ResponseDTO.builder()
+                        .map(null)
+                        .code(Constant.RESPONSE.CODE.OK)
+                        .message(Constant.RESPONSE.MESSAGE.OK)
+                        .build()
+        );
+    }
+
+    @PostMapping("/block")
+    public ResponseEntity<ResponseDTO> blockUser(@RequestBody UserUpdateRequest user) {
+
+        logger.info("call api blockUser ");
+        return ResponseEntity.ok().body(
+                ResponseDTO.builder()
+                        .map(null)
+                        .code(Constant.RESPONSE.CODE.OK)
+                        .message(Constant.RESPONSE.MESSAGE.OK)
+                        .build()
+        );
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<ResponseDTO> login(@RequestBody LoginRequest user) {
+
+        logger.info("call api /create ");
+        return ResponseEntity.ok().body(
+                ResponseDTO.builder()
+                        .map(user)
+                        .code(Constant.RESPONSE.CODE.OK)
+                        .message(Constant.RESPONSE.MESSAGE.OK)
+                        .build()
+        );
+    }
+
+
+
 
 }

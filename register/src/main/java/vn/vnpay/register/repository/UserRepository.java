@@ -15,6 +15,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Query("select  u from User  u where (:status is null or u.status = :status) " +
             "and (:keyword is null or :keyword = '' or u.fullname like %:keyword%) ")
     Page<User> findByFilter(String keyword, Integer status, Pageable pageable);
-
-
 }

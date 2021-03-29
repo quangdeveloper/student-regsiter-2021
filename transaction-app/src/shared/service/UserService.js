@@ -4,18 +4,22 @@ import {users} from "../../utils/api-context";
 
 const url = users;
 
-export const searchData = (params) => {
-    return callAPI('POST', url + '/find_by_filter',  params, {});
+export const login =  (data) => {
+    return callAPI('POST', url+ '/login',  data);
 }
 
-export const findByID = (params) => {
-    return callAPI('POST',url, params);
+export const searchData =  (data) => {
+     return callAPI('POST', url + '/find_by_filter',  data);
+}
+
+export const findByID = (data) => {
+    return callAPI('POST',url , data);
 }
 
 export const createUser = (data) => {
-    return callAPI('POST', url, data);
+    return callAPI('POST', url + '/create', data);
 }
 
 export const updateUser = (data) => {
-    return callAPI('POST', url, data);
+    return callAPI('POST', url  + '/update', data);
 }

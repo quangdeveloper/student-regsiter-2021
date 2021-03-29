@@ -43,7 +43,7 @@ export default function Aside() {
                      data-menu-dropdown-timeout="500">
                     <ul className="menu-nav">
                         <li className="menu-item menu-item-active center" aria-haspopup="true">
-                            <a href="/#/debt-fee" className="menu-link">
+                            <a href="/user" className="menu-link">
                                 <span className="svg-icon menu-icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                       <g id="Group_309" data-name="Group 309" transform="translate(-35 -108)">
@@ -55,11 +55,11 @@ export default function Aside() {
                                       </g>
                                   </svg>
                                 </span>
-                                <span className="menu-text">Danh sách nợ phí</span>
+                                <span className="menu-text">Danh sách Users</span>
                             </a>
                         </li>
                         <li className="menu-item center" aria-haspopup="true" >
-                            <a href="/#/transaction" className="menu-link">
+                            <a href="/transaction" className="menu-link">
                                 <span className="svg-icon menu-icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                       <g id="Group_308" data-name="Group 308" transform="translate(-35 -156)">

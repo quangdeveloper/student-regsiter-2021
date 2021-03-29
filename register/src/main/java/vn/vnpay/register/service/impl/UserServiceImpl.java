@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public PageDTO findByFilter(UserFilterRequest userFilterRequest) {
 
-        Pageable pageable = PageRequest.of(userFilterRequest.getPageNo(),
+        Pageable pageable = PageRequest.of(userFilterRequest.getPageNo() -1 ,
                 userFilterRequest.getPageSize());
 
         Page<User> page = userRepository.findByFilter(userFilterRequest.getKeyword(), userFilterRequest.getStatus(), pageable);

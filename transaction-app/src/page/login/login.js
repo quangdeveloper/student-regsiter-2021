@@ -1,40 +1,78 @@
 import React, {lazy} from 'react';
 import './login.css';
+import {login} from "../../shared/service/UserService";
+import {toast} from "react-toastify";
+import {Formik} from "formik";
 
 const Login = () => {
+
+    const initValue = {
+        username: '',
+        password: ''
+    }
+
+    const validate = (values) => {
+        const errors = {};
+
+        if (values.username.length < 8) {
+            errors.username = 'Tài khoản phải dài hơn 8 ki tự'
+        }
+
+        if (values.password.length < 8) {
+            errors.password = 'Mật khẩu phải dài hơn 8 ki tự'
+        }
+        return errors;
+    }
+
+    const loginUser = (data) => {
+        login(data).then(res => {
+                if (res.code == 200) {
+                    sessionStorage.setItem("Auth", JSON.stringify(res.map));
+                    window.location.href ="/home";
+                    toast.success("Đăng nhập thành công")
+                } else {
+                    toast.error("Sai thông tin tài khoản, mật khẩu")
+                }
+            }
+        )
+    }
+
     return (
         <div id="login-body" className="d-flex flex-column flex-root">
-            {/*<!--beginLogin*/}
             <div className="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
                  id="kt_login">
-                {/*<!--begin::Aside*/}
                 <div className="login-aside d-flex flex-column flex-row-auto" style={{backgroundColor: "#70BDE0"}}>
-                    {/*<!--begin::Aside Bottom*/}
                     <div
                         className="aside-img d-flex flex-row-fluid bgi-no-repeat bgi-position-y-bottom bgi-position-x-center"
                         style={{backgroundImage: "url(assets/media/bg/mask_group_1.jpg)"}}></div>
-                    {/*<!--end::Aside Bottom--*/}
                 </div>
-                {/*<!--begin::Aside--*/}
-                {/*<!--begin::Content--*/}
                 <div
                     className="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
-                    {/*<!--begin::Content body--*/}
                     <div className="d-flex flex-column-fluid flex-center">
-                        {/*<!--begin::Signin--*/}
                         <div className="login-form login-signin">
-                            {/*<!--begin::Form--*/}
-                            <form className="form" noValidate="novalidate" id="kt_login_signin_form">
-                                {/*<!--begin::Title--*/}
-                                <div className="text-center pb-13 pt-lg-0 pt-5">
-                                    <h3 className="text-dark font-main">Provider Site</h3>
-                                    <span className="text-muted"> Hệ thống quản lý thu nợ trực tuyến cho các đơn vị<br/>Hành chính công</span>
-                                </div>
-                                {/*<!--begin::Title--*/}
-                                {/*<!--begin::Form group--*/}
-                                <div className="form-group">
-                                    <div className="input-group input-group-left">
-                                        <div className="input-group-prepend">
+                            <Formik
+                                initialValues={initValue}
+                                validate={validate}
+                                onSubmit={(values) => {
+                                    loginUser(values)
+                                }}
+                            >{({
+                                   errors,
+                                   values,
+                                   touched,
+                                   handleChange,
+                                   handleBlur,
+                                   handleSubmit
+                               }) => (
+                                <form className="form" onSubmit={handleSubmit}>
+                                    <div className="text-center pb-13 pt-lg-0 pt-5">
+                                        <h3 className="text-dark font-main">Provider Site</h3>
+                                        <span
+                                            className="text-muted"> Hệ thống quản lý trực tuyến cho các đơn vị<br/>Hành chính công</span>
+                                    </div>
+                                    <div className="form-group">
+                                        <div className="input-group input-group-left">
+                                            <div className="input-group-prepend">
                                             <span className="input-group-text">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
                                                    viewBox="0 0 25 25">
@@ -49,16 +87,20 @@ const Login = () => {
                                                 </g>
                                               </svg>
                                             </span>
+                                            </div>
+                                            <input className="form-control"
+                                                   placeholder="Tên đăng nhập"
+                                                   type="text"
+                                                   value={values.username}
+                                                   onChange={handleChange}
+                                                   onBlur={handleBlur}
+                                                   name="username"
+                                                   autoComplete="off"/>
                                         </div>
-                                        <input className="form-control" placeholder="Tên đăng nhập" type="text"
-                                               name="username" autoComplete="off"/>
                                     </div>
-                                </div>
-                                {/*<!--end::Form group--*/}
-                                {/*<!--begin::Form group--*/}
-                                <div className="form-group">
-                                    <div className="input-group input-group-left">
-                                        <div className="input-group-prepend">
+                                    <div className="form-group">
+                                        <div className="input-group input-group-left">
+                                            <div className="input-group-prepend">
                                             <span className="input-group-text">
                                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                                    viewBox="0 0 24 24">
@@ -73,66 +115,57 @@ const Login = () => {
                                                 </g>
                                               </svg>
                                             </span>
-                                        </div>
-                                        <input className="form-control" placeholder="Mật khẩu" type="password"
-                                               name="password" autoComplete="off"/>
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <div className="row">
-                                        <div className="col-7 text-left checkbox-inline">
-                                            <label className="checkbox">
-                                                <input type="checkbox" name="Checkboxes1"/>
-                                                <span></span>Duy trì đăng nhập</label>
-                                        </div>
-                                        <div className="col-5 text-right">
-                                            <a href="javascript:;"
-                                               className="text-primary text-hover-primary pt-5"
-                                               id="kt_login_forgot">Quên mật khẩu?</a>
+                                            </div>
+                                            <input className="form-control"
+                                                   placeholder="Mật khẩu"
+                                                   type="password"
+                                                   value={values.password}
+                                                   onChange={handleChange}
+                                                   onBlur={handleBlur}
+                                                   name="password"
+                                                   autoComplete="off"/>
                                         </div>
                                     </div>
-                                </div>
-                                {/*<!--end::Form group--*/}
-                                {/*<!--begin::Action--*/}
-                                <div className="pb-lg-0 pb-5">
-                                    <button type="button" id="kt_login_signin_submit"
-                                            className="btn btn-primary btn-block font-size-h6 px-8 py-4 my-3 mr-3">Đăng
-                                        nhập
-                                    </button>
-                                </div>
-                                {/*<!--end::Action--*/}
-                            </form>
-                            {/*<!--end::Form--*/}
+                                    <div className="form-group">
+                                        <div className="row">
+                                            <div className="col-7 text-left checkbox-inline">
+                                                <label className="checkbox">
+                                                    <input type="checkbox" name="Checkboxes1"/>
+                                                    <span></span>Duy trì đăng nhập</label>
+                                            </div>
+                                            <div className="col-5 text-right">
+                                                <a href="javascript:;"
+                                                   className="text-primary text-hover-primary pt-5"
+                                                   id="kt_login_forgot">Quên mật khẩu?</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="pb-lg-0 pb-5">
+                                        <button type="submit"
+                                                className="btn btn-primary btn-block font-size-h6 px-8 py-4 my-3 mr-3">
+                                            Đăng nhập
+                                        </button>
+                                    </div>
+                                </form>)}
+                            </Formik>
                         </div>
-                        {/*<!--end::Signin--*/}
-                        {/*<!--begin::Signup--*/}
                         <div className="login-form login-signup">
-                            {/*<!--begin::Form--*/}
                             <form className="form" noValidate="novalidate" id="kt_login_signup_form">
-                                {/*<!--begin::Title--*/}
                                 <div className="pb-13 pt-lg-0 pt-5 text-center">
                                     <p className="text-dark font-main">Gửi yêu cầu thành công!</p>
                                     <p className="text-muted">Thông tin mật khẩu mới đã được gửi vào hòm thư đăng ký.
                                         <br/>Vui lòng kiểm tra email và làm theo hướng dẫn.</p>
                                 </div>
-                                {/*<!--end::Title--*/}
-                                {/*<!--begin::Form group--*/}
                                 <div className="form-group d-flex flex-wrap pb-lg-0 pb-3">
                                     <button type="button" id="BackToLogin"
                                             className="btn btn-block btn-primary font-size-h6 px-8 py-4 my-3 mr-4">
                                         Quay lại đăng nhập
                                     </button>
                                 </div>
-                                {/*<!--end::Form group--*/}
                             </form>
-                            {/*<!--end::Form--*/}
                         </div>
-                        {/*<!--end::Signup--*/}
-                        {/*<!--begin::Forgot--*/}
                         <div className="login-form login-forgot">
-                            {/*<!--begin::Form--*/}
                             <form className="form" noValidate="novalidate" id="kt_login_forgot_form">
-                                {/*<!--begin::Title--*/}
                                 <div className="pb-13 pt-lg-0 pt-5 text-center">
                                     <p className="text-dark font-main">Yêu cầu cấp mật khẩu mới</p>
                                     <p className="text-muted">
@@ -140,36 +173,48 @@ const Login = () => {
                                             className="row_1">Vui lòng nhập email đăng ký tài khoản vào ô dưới để</span>
                                         <span className="row_2">được cấp lại mật khẩu mới</span></p>
                                 </div>
-                                {/*<!--end::Title--*/}
-                                {/*<!--begin::Form group--*/}
                                 <div className="form-group">
                                     <div className="input-group input-group-left">
                                         <div className="input-group-prepend">
                                             <span className="input-group-text">
-                                              <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+                                              <svg xmlns="http://www.w3.org/2000/svg"
+                                                   xmlnsXlink="http://www.w3.org/1999/xlink" width="24" height="24"
+                                                   viewBox="0 0 24 24">
                                                   <defs>
                                                   <clipPath id="clipPath">
-                                                    <rect id="Rectangle_119" data-name="Rectangle 119" width="18" height="13.701" transform="translate(0 0)" fill="#90a4ae"/>
+                                                    <rect id="Rectangle_119" data-name="Rectangle 119" width="18"
+                                                          height="13.701" transform="translate(0 0)" fill="#90a4ae"/>
                                                   </clipPath>
                                                 </defs>
                                                 <g id="Group_321" data-name="Group 321"
                                                    transform="translate(-915 -437)">
-                                                  <rect id="Rectangle_120" data-name="Rectangle 120" width="24" height="24" transform="translate(915 437)" fill="#fff" opacity="0"/>
-                                                  <g id="Group_186" data-name="Group 186" transform="translate(918 442)" clipPath="url(#clip-path)">
-                                                    <path id="Path_28" data-name="Path 28" d="M17.518.5A1.677,1.677,0,0,1,18,1.707V11.993a1.674,1.674,0,0,1-.482,1.2,1.575,1.575,0,0,1-1.185.5H1.668a1.576,1.576,0,0,1-1.186-.5A1.678,1.678,0,0,1,0,11.993V1.707A1.681,1.681,0,0,1,.482.5,1.579,1.579,0,0,1,1.668,0H16.333a1.579,1.579,0,0,1,1.185.5M9,7.031,1.708,2.069v9.924H16.293V1.908ZM4.219,1.707,9,4.941l4.581-3.234Z" fill="#90a4ae"/>
+                                                  <rect id="Rectangle_120" data-name="Rectangle 120" width="24"
+                                                        height="24" transform="translate(915 437)" fill="#fff"
+                                                        opacity="0"/>
+                                                  <g id="Group_186" data-name="Group 186" transform="translate(918 442)"
+                                                     clipPath="url(#clip-path)">
+                                                    <path id="Path_28" data-name="Path 28"
+                                                          d="M17.518.5A1.677,1.677,0,0,1,18,1.707V11.993a1.674,1.674,0,0,1-.482,1.2,1.575,1.575,0,0,1-1.185.5H1.668a1.576,1.576,0,0,1-1.186-.5A1.678,1.678,0,0,1,0,11.993V1.707A1.681,1.681,0,0,1,.482.5,1.579,1.579,0,0,1,1.668,0H16.333a1.579,1.579,0,0,1,1.185.5M9,7.031,1.708,2.069v9.924H16.293V1.908ZM4.219,1.707,9,4.941l4.581-3.234Z"
+                                                          fill="#90a4ae"/>
                                                   </g>
                                                 </g>
                                               </svg>
                                             </span>
                                         </div>
-                                        <input className="form-control" type="email" placeholder="Email đăng ký" name="email" autoComplete="off"/>
+                                        <input className="form-control" type="email" placeholder="Email đăng ký"
+                                               name="email" autoComplete="off"/>
                                     </div>
                                 </div>
                                 {/*<!--end::Form group--*/}
                                 {/*<!--begin::Form group--*/}
                                 <div className="form-group pb-lg-0 text-center">
-                                    <button type="button" id="kt_login_forgot_submit" className="btn btn-block btn-primary font-size-h6 px-8 py-4 my-3 mr-4">Gửi yêu cầu</button>
-                                    <a id="kt_login_forgot_cancel" className="text-primary text-hover-primary d-inline-block px-8 py-4 my-3" href="javascript:;">Quay lại đăng nhập</a>
+                                    <button type="button" id="kt_login_forgot_submit"
+                                            className="btn btn-block btn-primary font-size-h6 px-8 py-4 my-3 mr-4">Gửi
+                                        yêu cầu
+                                    </button>
+                                    <a id="kt_login_forgot_cancel"
+                                       className="text-primary text-hover-primary d-inline-block px-8 py-4 my-3"
+                                       href="javascript:;">Quay lại đăng nhập</a>
                                 </div>
                                 {/*<!--end::Form group--*/}
                             </form>
@@ -182,7 +227,8 @@ const Login = () => {
                     <div className="text-center py-7 py-lg-0">
                         <a className="btn btn-hover-bg-light" href="guide.html">
                             <span className="svg-icon svg-icon-primary svg-icon-2x">
-                              <img className="ic_guide" style={{width: 24, height: 24}} src="assets/media/svg/icons/24x24-guide.svg"/>
+                              <img className="ic_guide" style={{width: 24, height: 24}}
+                                   src="assets/media/svg/icons/24x24-guide.svg"/>
                             </span> Hướng dẫn sử dụng
                         </a>
                     </div>

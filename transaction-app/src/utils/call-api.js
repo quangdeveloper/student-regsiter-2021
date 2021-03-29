@@ -1,7 +1,7 @@
 import axios from "axios";
 import {baseURL} from "./api-context";
 
-export const callAPI = (method, url, data, params) => {
+export const callAPI = async (method, url, data, params) => {
 
     const headers = {
         'Content-Type': 'application/json',
@@ -9,7 +9,7 @@ export const callAPI = (method, url, data, params) => {
         'Accept': 'application/json; charset=utf-8'
     };
 
-    return axios({
+    const result = await axios({
         headers: headers,
         baseURL: baseURL,
         url: url,
@@ -17,4 +17,6 @@ export const callAPI = (method, url, data, params) => {
         data: data,
         params: params,
     });
+
+    return result.data;
 }

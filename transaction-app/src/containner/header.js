@@ -27,25 +27,6 @@ export default function Header() {
                             className="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
                             <ul className="navi navi-hover py-4">
                                 <li className="navi-item">
-                                    <a className="navi-link" href="#"
-                                       className="btn btn-xs btn-light btn-icon mr-1"
-                                       data-toggle="modal" data-target="#modalPass">
-                                        <span className="svg-icon svg-icon-primary svg-icon-2x mr-3">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                               viewBox="0 0 24 24">
-                                            <g id="Group_315" data-name="Group 315" transform="translate(-1271 -95)">
-                                              <rect id="Rectangle_74" data-name="Rectangle 74" width="24" height="24"
-                                                    transform="translate(1271 95)" fill="#90a4ae" opacity="0"/>
-                                              <path id="Path_15" data-name="Path 15"
-                                                    d="M17.753,2.773,20,5.917,17.715,8.672h-2.13l-1.093-.84-1.152.84H11.777V6.933h1l1.738-1.27,1.66,1.27h.722l.918-1.093-.957-1.328H10.683a2.907,2.907,0,0,1,.048.42c.007.148.01.295.01.438a5.336,5.336,0,0,1-.41,2.09A5.511,5.511,0,0,1,7.46,10.332a5.336,5.336,0,0,1-2.09.41,5.348,5.348,0,0,1-2.09-.41A5.516,5.516,0,0,1,.41,7.46,5.336,5.336,0,0,1,0,5.37,5.348,5.348,0,0,1,.41,3.28,5.52,5.52,0,0,1,3.28.41,5.348,5.348,0,0,1,5.37,0,5.218,5.218,0,0,1,8.143.762a5.309,5.309,0,0,1,1.935,2.012ZM7.938,2.8A3.494,3.494,0,0,0,5.37,1.738,3.5,3.5,0,0,0,2.8,2.8,3.5,3.5,0,0,0,1.738,5.37,3.494,3.494,0,0,0,2.8,7.938,3.5,3.5,0,0,0,5.37,9,3.5,3.5,0,0,0,7.938,7.938,3.5,3.5,0,0,0,9,5.37,3.5,3.5,0,0,0,7.938,2.8M4.14,4.14a1.654,1.654,0,0,1,1.212-.508,1.676,1.676,0,0,1,1.23.508A1.654,1.654,0,0,1,7.09,5.352,1.736,1.736,0,0,1,5.352,7.09,1.654,1.654,0,0,1,4.14,6.582a1.676,1.676,0,0,1-.508-1.23A1.654,1.654,0,0,1,4.14,4.14"
-                                                    transform="translate(1273 102)" fill="#90a4ae"/>
-                                            </g>
-                                          </svg>
-                                        </span>
-                                        <span className="navi-text">Đổi mật khẩu</span>
-                                    </a>
-                                </li>
-                                <li className="navi-item">
                                     <a href="#" className="navi-link">
                                         <span className="svg-icon svg-icon-primary svg-icon-2x mr-3">
                                           <svg xmlns="http://www.w3.org/2000/svg"

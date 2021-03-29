@@ -1,57 +1,83 @@
 import React from "react";
 import Popup from "reactjs-popup";
-import Block from "../block/block";
-import AddOrEditDebtFee from "../add-edit/add-edit";
-import UserInfo from "../info/user-info";
+import BlockUser from "../BlockUser";
+import UserInfo from "../UserInfo";
+import UpdateUser from "../UpdateUser";
+import AddUser from "../AddUser";
 
-export default function DataTable(props) {
+const DataTable = (props) => {
+
     return (
         <div>
 
-            <table className="table dataTable table-hover table-head-custom" id="kt_datatable2">
+            <Popup modal trigger={
+                <div className="col-lg-2">
+                    <div className="form-group">
+                        <label
+                            className="hidden-mobile">&nbsp;</label>
+                        <button type="submit"
+                                name="submitButton"
+                                className="btn btn-search form-control btn-success">
+                            Thêm mới
+                        </button>
+                    </div>
+                </div>
+                }>
+                <div>
+                    <AddUser isClose={false}
+                                updateUser={props.createUser}
+                                searchUser={props.searchUser}
+                                item={props.item}/>
+                </div>
+            </Popup>
+
+            <table className="table dataTable table-hover table-head-custom">
                 <thead>
                 <tr>
                     <th title="Field #1" className="td1 text-center">STT</th>
-                    <th title="Field #2" className="td2">Mã Sinh Viên</th>
+                    <th title="Field #2" className="td2">Tên đăng nhập</th>
                     <th title="Field #3" className="td3">Họ Và Tên</th>
-                    <th title="Field #4" className="td4">Mã Khoa</th>
-                    <th title="Field #5" className="td5">Hình Thức
-                        Thanh Toán
-                    </th>
-                    <th title="Field #6" className="td6">Loại Học Phí</th>
-                    <th title="Field #7" className="text-right td7">Số Tiền (VND)</th>
+                    <th title="Field #4" className="td4">Tuổi</th>
+                    <th title="Field #5" className="td5">Email</th>
+                    <th title="Field #6" className="td6">Địa chỉ</th>
                     <th title="Field #8" className="td8">Trạng Thái</th>
-                    <th title="Field #9" className="td9">Người Upload</th>
-                    <th title="Field #10" className="td10">Người Cập Nhật</th>
-                    <th title="Field #11" className="td11 action-tools text-center">Thao Tác</th>
+                    <th title="Field #11" className="td11 action-tools">Thao Tác</th>
                 </tr>
                 </thead>
                 <tbody>
-                {props.items.map((item, i) => (<RowData key={i} stt={i + 1} item={item}/>))}
+                {props.items && props.items.length > 0 ? props.items.map((item, i) =>
+                    (<RowData key={i}
+                              updateUser={props.updateUser}
+                              searchUser={props.searchUser}
+                              stt={(props.pageConfig.pageNo - 1) * props.pageConfig.pageSize + i + 1}
+                              item={item}/>
+                              ))
+                    :
+                    <span>Không có dữ liệu </span>
+                }
                 </tbody>
             </table>
         </div>
     )
 }
 
-function RowData(props) {
+export default DataTable;
+
+const RowData = (props) => {
     return (
         <tr>
             <td className="td1 text-center">{props.stt}</td>
-            <td className="td2">{props.item.studentId}</td>
-            <td className="td3">{props.item.fullName}</td>
-            <td className="td4">{props.item.facultyId}</td>
-            <td className="td5">{props.item.paymentForm}</td>
-            <td className="td6">{props.item.studyFeeType}</td>
-            <td className="td7" align="right">{props.item.money}</td>
+            <td className="td2">{props.item.username}</td>
+            <td className="td3">{props.item.fullname}</td>
+            <td className="td4">{props.item.age}</td>
+            <td className="td5">{props.item.email}</td>
+            <td className="td6">{props.item.address}</td>
             <td className="td8">
-                <span className="label label-lg label-light-inverse label-inline"> {props.item.status}</span>
+                <span className="label label-lg label-light-inverse label-inline">
+                    {props.item.status == 1 ? 'active' : (props.item.status == 0 ? 'inactive' : 'delete')}
+                </span>
             </td>
-            <td className="td9">{props.item.userUpload}<br/>{props.item.dateUpload}
-            </td>
-            <td className="td10">{props.item.userUpdate}<br/>{props.item.dateUpdate}
-            </td>
-            <td className="td11 action-tools text-right">
+            <td className="td11 action-tools">
                 <Popup modal trigger={
                     <a className="btn btn1 btn-xs btn-light btn-icon mr-1"
                        data-toggle="modal"
@@ -65,9 +91,11 @@ function RowData(props) {
                                       transform="translate(1304.667 573.333)" fill="#01579b"/>
                             </g>
                         </svg>
-                    </a>} >
+                    </a>}>
                     <div>
-                        <AddOrEditDebtFee isClose = {false} />
+                        <UpdateUser isClose={false}
+                                    searchUser={props.searchUser}
+                                    item={props.item}/>
                     </div>
                 </Popup>
                 <Popup modal trigger={
@@ -83,8 +111,8 @@ function RowData(props) {
                                       transform="translate(1329.333 573.333)" fill="#f44336"/>
                             </g>
                         </svg>
-                    </a>} >
-                    <Block/>
+                    </a>}>
+                    <BlockUser/>
                 </Popup>
                 <Popup modal trigger={
                     <a className="btn btn3 btn-xs btn-light btn-icon mr-1"
@@ -105,8 +133,8 @@ function RowData(props) {
                                       transform="translate(1352.681 574.605)" fill="#01579b"/>
                             </g>
                         </svg>
-                    </a>} >
-                    <UserInfo debtFee = {props.item} isClose = {false} />
+                    </a>}>
+                    <UserInfo item={props.item} isClose={false}/>
                 </Popup>
             </td>
         </tr>

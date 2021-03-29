@@ -1,7 +1,8 @@
-import {Formik} from "formik";
-import React, {useEffect, useState} from "react";
+import {Form, Formik} from "formik";
+import React from "react";
 
-const SearchArea = (searchUser) => {
+
+const SearchArea = (props) => {
 
     const validate = values => {
         const errors = {};
@@ -24,7 +25,7 @@ const SearchArea = (searchUser) => {
                     pageNo: 1,
                     pageSize: 10
                 };
-                searchUser(data);
+                props.searchUser(data);
             }}
         >{({
                errors,
@@ -34,7 +35,7 @@ const SearchArea = (searchUser) => {
                handleBlur,
                handleSubmit,
            }) => (
-            <form className="form" id="kt_form_search">
+            <Form className="form"  onSubmit={handleSubmit}>
                 <div className="card-body"
                      style={{boxShadow: "white", backgroundColor: "white"}}>
                     <div className="row">
@@ -55,7 +56,10 @@ const SearchArea = (searchUser) => {
                             <div className="form-group">
                                 <label>Trạng thái</label>
                                 <select className="form-control"
-                                        value={values.status} name="status">
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        value={values.status}
+                                        name="status">
                                     <option value="">Tất cả</option>
                                     <option value="1">Hoạt động</option>
                                     <option value="0">Đang khóa</option>
@@ -82,7 +86,7 @@ const SearchArea = (searchUser) => {
                         </div>
                     </div>
                 </div>
-            </form>)}
+            </Form>)}
         </Formik>
     )
 }
