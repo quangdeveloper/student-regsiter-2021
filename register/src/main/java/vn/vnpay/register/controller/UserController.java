@@ -47,7 +47,7 @@ public class UserController {
         logger.info("call api /create ");
         return ResponseEntity.ok().body(
                 ResponseDTO.builder()
-                        .map(null)
+                        .map(userService.createUser(userNewRequest))
                         .code(Constant.RESPONSE.CODE.OK)
                         .message(Constant.RESPONSE.MESSAGE.OK)
                         .build()
@@ -61,7 +61,7 @@ public class UserController {
         logger.info("call api /create ");
         return ResponseEntity.ok().body(
                 ResponseDTO.builder()
-                        .map(null)
+                        .map(userService.updateUser(user))
                         .code(Constant.RESPONSE.CODE.OK)
                         .message(Constant.RESPONSE.MESSAGE.OK)
                         .build()
@@ -84,7 +84,7 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<ResponseDTO> login(@RequestBody LoginRequest user) {
 
-        logger.info("call api /create ");
+        logger.info("call api login");
         return ResponseEntity.ok().body(
                 ResponseDTO.builder()
                         .map(user)

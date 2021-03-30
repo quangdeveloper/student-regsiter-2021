@@ -16,7 +16,8 @@ import javax.persistence.*;
 public class ScholarshipType {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="seq",sequenceName="SCHOLARSHIP_TYPE_SEQ",  allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     @Column(name = "N_ID")
     private Long id;
 

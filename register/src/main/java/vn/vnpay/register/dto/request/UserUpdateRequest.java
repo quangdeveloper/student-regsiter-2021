@@ -21,7 +21,7 @@ public class UserUpdateRequest {
 
     private String fullName;
 
-    private String age;
+    private Integer age;
 
     private String address;
 

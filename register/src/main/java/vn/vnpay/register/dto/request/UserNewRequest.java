@@ -16,9 +16,9 @@ public class UserNewRequest {
 
     private String password;
 
-    private String fullName;
+    private String fullname;
 
-    private String age;
+    private Integer age;
 
     private String address;
 

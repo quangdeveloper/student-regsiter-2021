@@ -23,4 +23,11 @@ public class RoleServiceImpl implements RoleService {
 
         return roleRepository.findAll();
     }
+
+    @Override
+    public void createRole() {
+        roleRepository.save(Role.builder()
+                .name("test vui 1")
+        .build());
+    }
 }

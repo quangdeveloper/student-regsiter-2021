@@ -17,11 +17,12 @@ public class Role {
 
     @Id
     @Column(name = "N_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="seq",sequenceName="ROLE_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     private Long id;
 
     @Column(name = "S_NAME")
-    private String username;
+    private String name;
 
     @Column(name = "N_STATUS")
     private Integer status;

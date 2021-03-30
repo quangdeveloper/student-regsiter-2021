@@ -17,7 +17,8 @@ public class ForeignLanguage {
 
     @Id
     @Column(name = "N_ID")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name="seq",sequenceName="LANGUAGE_SEQ", allocationSize = 1)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="seq")
     private Long id;
 
     @Column(name = "N_LISTEN")
