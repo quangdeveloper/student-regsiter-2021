@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 export default function Header() {
+
+    const [username, setUsername] = useState("");
 
     return (
         <div id="kt_header" className="header header-fixed" style={{marginBottom: 100}}>
@@ -19,7 +21,7 @@ export default function Header() {
                                 </span>
                                 <span className="text-user font-size-base d-none d-md-inline mr-3">
                                     <span>Xin chào!</span>
-                                    <b>haonv@vnpay.vn</b>
+                                    <b>{username}</b>
                                 </span>
                             </div>
                         </div>

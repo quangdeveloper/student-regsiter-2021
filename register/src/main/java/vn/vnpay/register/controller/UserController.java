@@ -58,7 +58,7 @@ public class UserController {
     @PostMapping("/update")
     public ResponseEntity<ResponseDTO> updateUser(@RequestBody UserUpdateRequest user) {
 
-        logger.info("call api /create ");
+        logger.info("call api /update ");
         return ResponseEntity.ok().body(
                 ResponseDTO.builder()
                         .map(userService.updateUser(user))
@@ -74,7 +74,7 @@ public class UserController {
         logger.info("call api blockUser ");
         return ResponseEntity.ok().body(
                 ResponseDTO.builder()
-                        .map(null)
+                        .map(userService.blockAndUnlockUser(user))
                         .code(Constant.RESPONSE.CODE.OK)
                         .message(Constant.RESPONSE.MESSAGE.OK)
                         .build()
@@ -93,8 +93,4 @@ public class UserController {
                         .build()
         );
     }
-
-
-
-
 }

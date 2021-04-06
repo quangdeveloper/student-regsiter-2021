@@ -3,7 +3,7 @@ import {blockAndUnbLockUser} from "../../shared/service/UserService";
 import {toast} from "react-toastify";
 import {Formik} from "formik";
 
-const BlockUser = (props) => {
+const UnBlockUser = (props) => {
 
     const initValue = {
         id: props.item.id,
@@ -12,7 +12,7 @@ const BlockUser = (props) => {
         age: props.item.age,
         email: props.item.email,
         address: props.item.address,
-        status: 0
+        status: 1
     };
     const validate = (values) => {
     };
@@ -27,11 +27,11 @@ const BlockUser = (props) => {
     const blockOrUnlockUser = (data) => {
         blockAndUnbLockUser(data).then(res => {
             if (res.code == 200) {
-                toast.success("Khóa tài khoản thành công");
+                toast.success("Mở khóa tài khoản thành công");
                 setIsClose(true);
                 props.searchUser();
             } else {
-                toast.error("Khóa tài khoản thất bại");
+                toast.error("Mở khóa tài khoản thất bại");
             }
         })
     }
@@ -55,7 +55,7 @@ const BlockUser = (props) => {
                                       transform="translate(1329.333 573.333)" fill="#f44336"/>
                             </g>
                         </svg>
-                        <p className="my-8">Bạn muốn khóa bản ghi này?</p>
+                        <p className="my-8">Bạn muốn mở khóa bản ghi này?</p>
                     </div>
                     <div className="modal-footer justify-content-center border-0">
                         <Formik
@@ -90,4 +90,4 @@ const BlockUser = (props) => {
         </div>
     )
 }
-export default BlockUser;
+export default UnBlockUser;

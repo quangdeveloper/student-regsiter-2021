@@ -14,4 +14,5 @@ public interface UserService {
     PageDTO findByFilter(UserFilterRequest userFilterRequest);
     ActionDTO createUser(UserNewRequest userNewRequest);
     ActionDTO updateUser(UserUpdateRequest user);
+    ActionDTO blockAndUnlockUser(UserUpdateRequest user);
 }

@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/**
+ * @Author: quangnv3
+ */
 @Entity
 @Table(name = "TB_ACADEMIC")
 @Data

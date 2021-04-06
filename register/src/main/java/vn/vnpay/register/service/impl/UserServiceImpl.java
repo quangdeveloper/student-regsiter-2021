@@ -43,8 +43,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public ActionDTO createUser(UserNewRequest userNewRequest) {
 
-        User user =  userRepository.findbyUsername(userNewRequest.getUsername());
-        if (user!= null) {
+        User user = userRepository.findbyUsername(userNewRequest.getUsername());
+        if (user != null) {
+            logger.error("GeneralException: ");
             throw new GeneralException(Constant.RESPONSE.CODE.C409, Constant.RESPONSE.MESSAGE.C409_USER);
         }
 
@@ -77,7 +78,7 @@ public class UserServiceImpl implements UserService {
         User newUser = User.builder()
                 .id(userUpdateRequest.getId())
                 .username(userUpdateRequest.getUsername())
-                .password(passwordEncoder.encode(userUpdateRequest.getPassword()))
+                .password(userRepository.findbyUsername(userUpdateRequest.getUsername()).getPassword())
                 .fullname(userUpdateRequest.getFullName())
                 .address(userUpdateRequest.getAddress())
                 .age(userUpdateRequest.getAge())
@@ -85,6 +86,21 @@ public class UserServiceImpl implements UserService {
                 .status(1)
                 .build();
         try {
+            userRepository.save(newUser);
+        } catch (Exception ex) {
+            log.error("Database exception ", ex);
+        }
+
+        return new ActionDTO(ImmutableMap.builder()
+                .put("200", " Function success")
+                .build());
+    }
+
+    @Override
+    public ActionDTO blockAndUnlockUser(UserUpdateRequest user) {
+        try {
+            User newUser = userRepository.findbyUsername(user.getUsername());
+            newUser.setStatus(user.getStatus());
             userRepository.save(newUser);
         } catch (Exception ex) {
             log.error("Database exception ", ex);

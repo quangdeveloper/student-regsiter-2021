@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Form, Formik} from "formik";
+import {Formik} from "formik";
 import {updateUser} from "../../shared/service/UserService";
 import {toast} from "react-toastify";
 
@@ -13,7 +13,7 @@ const UpdateUser = (props) => {
         email: props.item.email,
         address: props.item.address
     };
-    const validate = values => {
+    const validate = (values) => {
     };
 
     const [isClose, setIsClose] = useState(props.isClose);

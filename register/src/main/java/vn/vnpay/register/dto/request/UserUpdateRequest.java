@@ -1,5 +1,6 @@
 package vn.vnpay.register.dto.request;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;
 
@@ -19,6 +20,7 @@ public class UserUpdateRequest {
 
     private String password;
 
+    @JsonProperty("fullname")
     private String fullName;
 
     private Integer age;
@@ -26,4 +28,8 @@ public class UserUpdateRequest {
     private String address;
 
     private String email;
+
+    private Integer type;
+
+    private Integer status;
 }
