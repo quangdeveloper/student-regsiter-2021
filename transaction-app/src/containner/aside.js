@@ -59,7 +59,7 @@ export default function Aside() {
                             </a>
                         </li>
                         <li className="menu-item center" aria-haspopup="true" >
-                            <a href="/transaction" className="menu-link">
+                            <a href="/role" className="menu-link">
                                 <span className="svg-icon menu-icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                       <g id="Group_308" data-name="Group 308" transform="translate(-35 -156)">
@@ -71,7 +71,7 @@ export default function Aside() {
                                       </g>
                                   </svg>
                                 </span>
-                                <span className="menu-text">Danh sách giao dịch</span>
+                                <span className="menu-text">Danh sách quyền</span>
                             </a>
                         </li>
                     </ul>

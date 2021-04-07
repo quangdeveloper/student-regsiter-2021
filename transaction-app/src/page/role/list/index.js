@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import './custom.css';
-import {searchData} from "../../../shared/service/UserService";
 import DataTable from "./DataTable";
 import SearchArea from "./SeachArea";
 import Pagination from "react-js-pagination";
 import ToastNotify from "../../../shared/toast/toast";
+import {searchData} from "../../../shared/service/RoleService";
 
 const Index = () => {
 
@@ -14,7 +14,7 @@ const Index = () => {
     const [keyword, setKeyword] = useState('');
     const [status, setStatus] = useState('');
 
-    const searchUser = async (values) => {
+    const searchRole = async (values) => {
 
         if (values) {
             setKeyword(values.keyword ? values.keyword : null);
@@ -30,7 +30,7 @@ const Index = () => {
             status: values ? values.status : status
         }
 
-        const response = await searchData(data);
+        const response = await searchData();
         if (response.code === '200') {
             setDataTable(response.map.list);
             setTotal(response.map.total)
@@ -54,7 +54,7 @@ const Index = () => {
     }
 
     useEffect(() => {
-        searchUser();
+        searchRole();
     }, [pageConfig])
 
     return (
@@ -69,7 +69,7 @@ const Index = () => {
                                         <div className="row">
                                             <div className="col-lg-12">
                                                 <div className="card card-custom card-filter card-stretch gutter-b">
-                                                    <SearchArea searchUser={searchUser}/>
+                                                    <SearchArea searchRole={searchRole}/>
                                                 </div>
                                             </div>
                                         </div>
@@ -80,7 +80,7 @@ const Index = () => {
                                                 <div className="card-body">
                                                     <DataTable items={dataTable}
                                                                pageConfig={pageConfig}
-                                                               searchUser={searchUser}/>
+                                                               searchRole={searchRole}/>
                                                 </div>
                                                 <div className="card-footer">
                                                       <span>

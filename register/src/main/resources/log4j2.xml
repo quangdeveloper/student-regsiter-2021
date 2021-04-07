@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="30">
+
+    <Properties>
+        <Property name="log-path">/var/logs/students</Property>
+    </Properties>
+
+    <Appenders>
+        <RollingFile  name="log" fileName="${log-path}/smsgw.log" append="true"
+                      filePattern="${log-path}/$${date:yyyy-MM}/smsgw-%d{yyyyMMdd}-%i.log.gz">
+            <Filters>
+                <ThresholdFilter level="error" onMatch="ACCEPT"   onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="warn"  onMatch="DENY" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="info"  onMatch="ACCEPT" onMismatch="NEUTRAL"/>
+                <ThresholdFilter level="debug"  onMatch="DENY" onMismatch="NEUTRAL"/>
+            </Filters>
+            <PatternLayout>
+                <pattern>%d %30M:%-10L - Token [%X{token}] - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="20 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="500"/>
+        </RollingFile >
+
+    </Appenders>
+    <Loggers>
+        <Logger name="vn.vnpay" additivity="false">
+            <appender-ref ref="log" level="info"/>
+        </Logger>
+        <Root level="ALL">
+        </Root>
+    </Loggers>
+</Configuration>

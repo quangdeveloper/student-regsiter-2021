@@ -30,3 +30,4 @@ app:
   jwt:
     secret: KYIVtA7915PUEWTqTca74sENpw48u7nkzSJiJmitF7D2PJWOu
     expriedTime: 6000000
+

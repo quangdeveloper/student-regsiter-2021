@@ -26,7 +26,6 @@ const DataTable = (props) => {
             }>
                 <div>
                     <AddUser isClose={false}
-                             updateUser={props.createUser}
                              searchUser={props.searchUser}
                              item={props.item}/>
                 </div>
@@ -48,7 +47,6 @@ const DataTable = (props) => {
                 <tbody>
                 {props.items && props.items.length > 0 ? props.items.map((item, i) =>
                         (<RowData key={i}
-                                  updateUser={props.updateUser}
                                   searchUser={props.searchUser}
                                   stt={(props.pageConfig.pageNo - 1) * props.pageConfig.pageSize + i + 1}
                                   item={item}/>
