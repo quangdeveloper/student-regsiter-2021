@@ -14,11 +14,11 @@ const loading = (
     </div>
 )
 
-const Layout = () => {
+const Layout = (props) => {
     return (
         <div>
             <Header/>
-            <Aside/>
+            <Aside {...props}/>
             <Switch>
                 {routes.map((route, idx) => {
                     return route.component ? (

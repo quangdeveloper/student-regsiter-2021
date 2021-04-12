@@ -1,15 +1,18 @@
-import React, {lazy} from 'react';
+import React, {lazy, useState} from 'react';
 import './login.css';
 import {login} from "../../shared/service/UserService";
 import {toast} from "react-toastify";
 import {Formik} from "formik";
+import {ReCaptcha} from 'react-recaptcha-google';
 
 const Login = () => {
+
 
     const initValue = {
         username: '',
         password: ''
     }
+    let capcha;
 
     const validate = (values) => {
         const errors = {};
@@ -28,7 +31,7 @@ const Login = () => {
         login(data).then(res => {
                 if (res.code == 200) {
                     sessionStorage.setItem("Auth", JSON.stringify(res.map));
-                    window.location.href ="/home";
+                    window.location.href = "/home";
                     toast.success("Đăng nhập thành công")
                 } else {
                     toast.error("Sai thông tin tài khoản, mật khẩu")
@@ -37,8 +40,16 @@ const Login = () => {
         )
     }
 
+    const resetCapcha = (capcha) => {
+        capcha.reset();
+    }
+
+    const callbackCapcha = (recapToken) => {
+        console.log("recapcha token: " + recapToken);
+    }
+
     return (
-        <div id="login-body" className="d-flex flex-column flex-root">
+        <div id="login-body" className="d-flex flex-column flex-root" style={{minHeight: 800}}>
             <div className="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white"
                  id="kt_login">
                 <div className="login-aside d-flex flex-column flex-row-auto" style={{backgroundColor: "#70BDE0"}}>
@@ -124,6 +135,19 @@ const Login = () => {
                                                    onBlur={handleBlur}
                                                    name="password"
                                                    autoComplete="off"/>
+
+                                            <ReCaptcha
+                                                ref={(el) => {
+                                                    capcha = el;
+                                                }}
+                                                size="normal"
+                                                data-theme="dark"
+                                                render="explicit"
+                                                sitekey="6LeKqaYaAAAAAAVs0hK3UeJ0PjiVRL9PqTF1kMOp"
+                                                onloadCallback={resetCapcha}
+                                                verifyCallback={callbackCapcha}
+                                            />
+
                                         </div>
                                     </div>
                                     <div className="form-group">
@@ -237,6 +261,7 @@ const Login = () => {
                 {/*<!--end::Content--*/}
             </div>
             {/*<!--end::Login--*/}
+
         </div>
     );
 }

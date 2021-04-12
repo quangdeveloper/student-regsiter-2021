@@ -42,6 +42,7 @@ const Index = () => {
             ...pageConfig,
             pageNo: event
         })
+        searchUser();
     }
 
     const handlePerpage = (e) => {
@@ -51,11 +52,13 @@ const Index = () => {
             pageNo: 1,
             pageSize: Number(e.target.value)
         })
+        searchUser();
+
     }
 
-    useEffect(() => {
-        searchUser();
-    }, [pageConfig])
+    // useEffect(() => {
+    //     searchUser();
+    // }, [pageConfig])
 
     return (
         <div>
