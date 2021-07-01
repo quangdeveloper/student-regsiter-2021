@@ -1,5 +1,7 @@
 import {Form, Formik} from "formik";
 import React from "react";
+import Popup from "reactjs-popup";
+import AddUser from "./modal/AddRole";
 
 
 const SearchArea = (props) => {
@@ -81,6 +83,26 @@ const SearchArea = (props) => {
                                         </button>
                                     </div>
                                 </div>
+                                <Popup modal trigger={
+                                    <div className="col-lg-4">
+                                        <div className="form-group">
+                                            <label
+                                                className="hidden-mobile">&nbsp;</label>
+                                            <button type="submit"
+                                                    name="submitButton"
+                                                    className="btn btn-search form-control btn-success">
+                                                Thêm mới
+                                            </button>
+                                        </div>
+                                    </div>
+                                }>
+                                    <div>
+                                        <AddUser isClose={false}
+                                                 searchRole={props.searchRole}
+                                                 item={props.item}/>
+                                    </div>
+                                </Popup>
+
                             </div>
                         </div>
                     </div>

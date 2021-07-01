@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 import {Form, Formik} from "formik";
 import {toast} from "react-toastify";
-import {createRole} from "../../shared/service/RoleService";
+import {createRole, updateRole} from "../../../shared/service/RoleService";
+import AddUser from "./AddRole";
 
-const AddRole = (props) => {
+const UpdateRole = (props) => {
 
     const initValue = {
-       name: ''
+        id: props.item.id,
+        name: props.item.name,
+
     };
     const validate = values => {
         const errors = {};
@@ -20,26 +23,26 @@ const AddRole = (props) => {
     }
 
 
-    const createRoles = (data) => {
-        createRole(data).then(res => {
+    const updateRoles = (data) => {
+        updateRole(data).then(res => {
             if (res.code == 200) {
-                toast.success("Thêm mới thành công");
+                toast.success("Cập nhập thành công");
                 setIsClose(true);
                 props.searchRole();
             } else {
-                toast.error("Thêm mới thất bại");
+                toast.error("Cập nhập thất bại");
             }
         })
     }
 
     return (
-        <div className="modal-dialog modal-lg" role="document" hidden={isClose}  style={{minWidth: 450}}>
+        <div className="modal-dialog modal-lg" role="document" hidden={isClose} style={{minWidth: 450}}>
             <div className="modal-content">
                 <div className="modal-header">
                     <h5 className="modal-title" id="exampleModalLabel">
                         <div className="row row-10">
                             <div className="col-auto">
-                                Thêm mới quyền
+                                Cập nhập quyền
                             </div>
                         </div>
                     </h5>
@@ -52,7 +55,7 @@ const AddRole = (props) => {
                         initialValues={initValue}
                         validate={validate}
                         onSubmit={(values) => {
-                            createRoles(values);
+                            updateRoles(values);
                         }}
                     >{({
                            errors,
@@ -66,13 +69,22 @@ const AddRole = (props) => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="form-group">
+
+                                        <input type="text"
+                                               name="id"
+                                               className="form-control"
+                                               value={values.id}
+                                               hidden={true}
+                                        />
+
                                         <label>Tên quyền</label>
                                         <input type="text"
                                                name="name"
                                                className="form-control"
                                                value={values.name}
                                                onChange={handleChange}/>
-                                        <span style={{color: "red"}}>{touched.name && errors.name ? errors.name : null}</span>
+                                        <span
+                                            style={{color: "red"}}>{touched.name && errors.name ? errors.name : null}</span>
                                     </div>
                                 </div>
 
@@ -80,13 +92,13 @@ const AddRole = (props) => {
                             </div>
                             <div className="row">
 
-                                    <button type="button" className="btn btn-light-primary" onClick={closePopup}
-                                            style={{minWidth: 100}}>
-                                        Hủy
-                                    </button>
-                                    <button type="submit" className="btn btn-primary" style={{minWidth: 120}} >
-                                        Thêm mới
-                                    </button>
+                                <button type="button" className="btn btn-light-primary" onClick={closePopup}
+                                        style={{minWidth: 100}}>
+                                    Hủy
+                                </button>
+                                <button type="submit" className="btn btn-primary" style={{minWidth: 120}}>
+                                    Cập nhập
+                                </button>
 
                             </div>
                         </form>)}
@@ -97,4 +109,4 @@ const AddRole = (props) => {
         </div>
     )
 }
-export default AddRole;
+export default UpdateRole;

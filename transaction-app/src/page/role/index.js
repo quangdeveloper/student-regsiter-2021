@@ -3,8 +3,7 @@ import './custom.css';
 import DataTable from "./DataTable";
 import SearchArea from "./SeachArea";
 import Pagination from "react-js-pagination";
-import ToastNotify from "../../../shared/toast/toast";
-import {searchData} from "../../../shared/service/RoleService";
+import {searchData} from "../../shared/service/RoleService";
 
 const Index = () => {
 
@@ -115,7 +114,6 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-            <ToastNotify/>
         </div>
     )
 }

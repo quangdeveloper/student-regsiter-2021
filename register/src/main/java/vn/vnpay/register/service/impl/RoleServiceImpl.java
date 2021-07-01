@@ -8,16 +8,12 @@ import org.springframework.stereotype.Service;
 import vn.vnpay.register.dto.ActionDTO;
 import vn.vnpay.register.dto.PageDTO;
 import vn.vnpay.register.dto.request.RoleNewRQ;
-import vn.vnpay.register.dto.request.UserNewRequest;
-import vn.vnpay.register.dto.request.UserUpdateRequest;
 import vn.vnpay.register.entity.Role;
-import vn.vnpay.register.entity.User;
 import vn.vnpay.register.exception.GeneralException;
 import vn.vnpay.register.repository.RoleRepository;
 import vn.vnpay.register.service.RoleService;
 import vn.vnpay.register.util.Constant;
 
-import java.util.List;
 
 @Service
 public class RoleServiceImpl implements RoleService {

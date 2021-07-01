@@ -1,33 +1,12 @@
 import React from "react";
 import Popup from "reactjs-popup";
-import RoleInfo from "../RoleInfo";
-import UpdateRole from "../UpdateRole";
-import AddUser from "../AddRole";
+import RoleInfo from "./modal/RoleInfo";
+import UpdateRole from "./modal/UpdateRole";
+
 
 const DataTable = (props) => {
 
     return (
-        <div>
-
-            <Popup modal trigger={
-                <div className="col-lg-2">
-                    <div className="form-group">
-                        <label
-                            className="hidden-mobile">&nbsp;</label>
-                        <button type="submit"
-                                name="submitButton"
-                                className="btn btn-search form-control btn-success">
-                            Thêm mới
-                        </button>
-                    </div>
-                </div>
-            }>
-                <div>
-                    <AddUser isClose={false}
-                             searchRole={props.searchRole}
-                             item={props.item}/>
-                </div>
-            </Popup>
 
             <table className="table dataTable table-hover table-head-custom">
                 <thead>
@@ -50,7 +29,6 @@ const DataTable = (props) => {
                 }
                 </tbody>
             </table>
-        </div>
     )
 }
 
